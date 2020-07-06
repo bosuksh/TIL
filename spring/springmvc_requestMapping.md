@@ -65,10 +65,10 @@ public class SampleControllerImpl implements SampleController{
 
 
 
-![image-20200706204038912](/TIL/spring/img/img1.png)
+![image-20200706204038912](https://github.com/bosuksh/TIL/blob/master/spring/img/img1.png)
 
 
 
-![image-20200706204122401](/TIL/spring/img/img2.png)
+![image-20200706204122401](https://github.com/bosuksh/TIL/blob/master/spring/img/img2.png)
 
 물론 구현체의 우선순위가 제일 높다.(이건 확인 안해도 알겠지)
