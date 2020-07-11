@@ -1,4 +1,4 @@
-2020-07-10
+2020-07-11
 
 # 이펙티브 자바 Item5
 
@@ -6,7 +6,7 @@
 
 많은 클래스가 하나 이상의 자원에 의존한다. 
 
-예를 들어 맞춤법 검사기는 사전에 의존하는데, 이 클래스는 정적 유틸리티 클래스(아이템4)나 싱글턴(아이템3)으로 구현하는 경우가 있다.
+예를 들어 맞춤법 검사기는 사전에 의존하는데, 이 클래스는 정적 유틸리티 클래스([아이템4](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/effectiveJava4.md))나 싱글턴([아이템3](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/effectiveJava3.md))으로 구현하는 경우가 있다.
 
 ```java
 public interface Lexicon { ... }
@@ -56,7 +56,7 @@ public class SpellChecker {
 
 **인스턴스를 생성할 때 생성자에 필요한 자원을 넘겨주는 방식이다.**
 
-불변(아이템17)을 보장하여 같은 자원을 사용하려는 여러 클라이언트가 의존 객체를 안심하고 공유할 수 있기도 한다. 의존 객체 주입은  생성자, 정적팩터리(아이템1), 빌더(아이템2) 모두에 똑같이 응용할 수 있다. 
+불변(아이템17)을 보장하여 같은 자원을 사용하려는 여러 클라이언트가 의존 객체를 안심하고 공유할 수 있기도 한다. 의존 객체 주입은  생성자, 정적팩터리(아이템1), 빌더([아이템2](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/effectiveJava2.md)) 모두에 똑같이 응용할 수 있다. 
 
 이 패턴의 변형으로는 생성자에 자원 팩토리를 넘겨주는 방식이 있다. 
 
