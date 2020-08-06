@@ -199,7 +199,6 @@ public class Calzone extends Pizza {
             return this;
         }
     }
-
    private Calzone(Builder builder) {
         super(builder);
         sauceInside = builder.sauceInside;
