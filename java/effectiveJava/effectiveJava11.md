@@ -97,14 +97,14 @@ public int hashCode(){
 private int hashCode; //자동으로 0 초기화
 
 @Override int hashCode() {
-	int result = hashCode;
-	if(result == 0) {
-		int result = Short.hashCode(areaCode);
-		result = 31 * result + Short.hashCode(prefix);
-		result = 31 * result + Short.hashCode(lineNum);
-		hashCode = result;
-	}
-	return result;
+    int result = hashCode;
+    if(result == 0) {
+	int result = Short.hashCode(areaCode);
+	result = 31 * result + Short.hashCode(prefix);
+	result = 31 * result + Short.hashCode(lineNum);
+	hashCode = result;
+    }
+    return result;
 }
 ```
 
