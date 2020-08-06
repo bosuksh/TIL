@@ -46,11 +46,11 @@ public class Elvis {
 
 ```java
 public class Elvis {
-	private static final Elvis INSTANCE = new Elvis();
-	private Elvis() { ... }
-	public static Elvis getInstance() { return INSTANCE;}
+    private static final Elvis INSTANCE = new Elvis();
+    private Elvis() { ... }
+    public static Elvis getInstance() { return INSTANCE;}
 
-	public void leaveTheBuilding() { ... }
+    public void leaveTheBuilding() { ... }
 }
 ```
 
@@ -72,8 +72,8 @@ Elvis.getInstance()는 항상 같은 객체의 참조를 반환하므로 제2의
 ```java
 //싱글턴임을 보장해주는 readResolve 메소드
 private Object readResolve(){
-	// '진짜' Elvis를 반환하고, '가짜' Elvis는 GC에 맡긴다. 		
-	return INSTANCE;
+    // '진짜' Elvis를 반환하고, '가짜' Elvis는 GC에 맡긴다. 		
+    return INSTANCE;
 }
 ```
 
@@ -83,9 +83,9 @@ private Object readResolve(){
 
 ```java
 public enum Elvis {
-	INSTANCE;
+    INSTANCE;
 
-	public void leaveBuilding() { ... }
+    public void leaveBuilding() { ... }
 }
 ```
 
