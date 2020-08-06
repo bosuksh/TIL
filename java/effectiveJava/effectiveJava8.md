@@ -92,27 +92,27 @@ close 메소드에서 이 객체는 더 이상 유효하지 않음을 필드에 
 
 ```java
 public class SampleClass implements AutoCloseable{
-		private boolean isClosed;
-		
-		@Override
-		public void close() throws RuntimeException {
-				if(this.isClosed) {
-							throw new IllegalStateException;
-				}
-				isClosed = true;
-		}
+    private boolean isClosed;
 
-		/**
-		*  다른 메소드 생략
-		*/
-}
+    @Override
+    public void close() throws RuntimeException {
+	if(this.isClosed) {
+	    throw new IllegalStateException;
+	}
+	isClosed = true;
+    }
+
+    /**
+    *  다른 메소드 생략
+    */
+    }
 
 public Main() {
 
-		public static void main(String[] args) {
-				SampleClass sampleClass = new SampleClass();
-				sampleClass.close();
-		}
+    public static void main(String[] args) {
+	SampleClass sampleClass = new SampleClass();
+ 	sampleClass.close();
+    }
 }
 ```
 

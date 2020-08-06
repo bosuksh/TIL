@@ -16,23 +16,23 @@ public class EnglishDictionary implements Lexicon { ... }
 
 // 정적 유틸리티 클래스
 public class SpellChecker {
-		private static final Lexicon dictionary = new EnglishDictionary();
+    private static final Lexicon dictionary = new EnglishDictionary();
 
-		private SpellChecker() { ... }
-		
-		public static boolean inValid(String word) { ... }
-		public static List<String> suggestions(String typo) { ... }
+    private SpellChecker() { ... }
+
+    public static boolean inValid(String word) { ... }
+    public static List<String> suggestions(String typo) { ... }
 }
 
 // Singleton 클래스
 public class SpellChecker {
-		private static final Lexicon dictionary = new EnglishDictionary();
-		
-		private SpellChecker() { ... }
-		public static SpellChecker INSTANCE = new SpellChecker();
-		
-		public boolean inValid(String word) { ... }
-		public List<String> suggestions(String typo) { ... }
+    private static final Lexicon dictionary = new EnglishDictionary();
+
+    private SpellChecker() { ... }
+    public static SpellChecker INSTANCE = new SpellChecker();
+
+    public boolean inValid(String word) { ... }
+    public List<String> suggestions(String typo) { ... }
 }
 ```
 
@@ -42,14 +42,14 @@ public class SpellChecker {
 
 ```java
 public class SpellChecker {
-		private final Lexicon dictionary;
+    private final Lexicon dictionary;
 
-		public SpellChecker(Lexicon dictionary) { 
-					this.dictionary = Object.requireNonNull(dictionary);
-		}
+    public SpellChecker(Lexicon dictionary) { 
+	this.dictionary = Object.requireNonNull(dictionary);
+    }
 
-		public boolean inValid(String word) { ... }
-		public List<String> suggestions(String typo) { ... }
+    public boolean inValid(String word) { ... }
+    public List<String> suggestions(String typo) { ... }
 
 }
 ```

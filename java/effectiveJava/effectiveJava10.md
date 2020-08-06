@@ -24,7 +24,7 @@ equals 메소드는 아래 열거한 상황에 해당되면  재정의 하지 �
 
 ```java
 @Override public boolean equals(Object o) {
-		throw new AssertionError();  // 호출금지
+    throw new AssertionError();  // 호출금지
 }
 ```
 
