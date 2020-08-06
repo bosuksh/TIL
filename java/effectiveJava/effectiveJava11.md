@@ -62,9 +62,9 @@ Object 명세에서 발췌한 규약이다.
 ```java
 @Override
 public int hashCode(){
-	int result = Short.hashCode(areaCode);
-	result = 31 * result + Short.hashCode(prefix);
-	result = 31 * result + Short.hashCode(lineNum);
+    int result = Short.hashCode(areaCode);
+    result = 31 * result + Short.hashCode(prefix);
+    result = 31 * result + Short.hashCode(lineNum);
 }
 ```
 
@@ -79,7 +79,7 @@ Objects 클래스는 임의의 개수만큼 객체를 받아 해시코드를 계
 ```java
 @Override
 public int hashCode(){
-	return Objects.hash(lineNum,prefix,areaCode
+    return Objects.hash(lineNum,prefix,areaCode
 }
 ```
 
