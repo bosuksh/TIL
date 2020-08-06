@@ -14,34 +14,34 @@ C, C++ 처럼 메모리를 직접 관리해야 하는 언어를 쓰다가 자바
 
 ```java
 public class Stack{
-		private Object[] elements;
-		private int size = 0;
-		private static final int DEFAULT_INITIAL_CAPACITY = 16;
+    private Object[] elements;
+    private int size = 0;
+    private static final int DEFAULT_INITIAL_CAPACITY = 16;
 
-		public stack() {
-				elements = new Object[DEFAULT_INITIAL_CAPACITY];
-		}
-		
-		public void push(Object e) {
-				ensureCapacity();
-				element[size++] = e;
-		}
+    public stack() {
+	elements = new Object[DEFAULT_INITIAL_CAPACITY];
+    }
 
-		public Object pop() {
-				if(size == 0)
-						throw new EmptyStackException();
-				return element[--size];
-			
-		}
+    public void push(Object e) {
+	ensureCapacity();
+	element[size++] = e;
+    }
 
-		/**
-		* 원소를 위한 공간을 저거도 하나 이상을 확보한다.
-		* 배열 크기를 늘려할 때마다 대략 두배씩 늘린다. 
-		*/
-		private void ensureCapacity() {
-				if(elements.length == size)
-						elements = Arrays.copyOf(elements, 2 * size + 1);
-		}
+    public Object pop() {
+	if(size == 0)
+	    throw new EmptyStackException();
+	return element[--size];
+
+    }
+
+    /**
+    * 원소를 위한 공간을 저거도 하나 이상을 확보한다.
+    * 배열 크기를 늘려할 때마다 대략 두배씩 늘린다. 
+    */
+    private void ensureCapacity() {
+	if(elements.length == size)
+	    elements = Arrays.copyOf(elements, 2 * size + 1);
+    }
 
 }
 ```
@@ -56,11 +56,11 @@ public class Stack{
 
 ```java
 public Object pop() {
-		if(size == 0)
-				throw new EmptyStackException();
-		Object result = element[--size];
-		element[size] = null;   //다 쓴 참조 해제
-		return result;
+    if(size == 0)
+	throw new EmptyStackException();
+    Object result = element[--size];
+    element[size] = null;   //다 쓴 참조 해제
+    return result;
 }
 ```
 
