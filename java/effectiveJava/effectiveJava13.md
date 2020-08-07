@@ -91,11 +91,11 @@ x.clone().getClass() = x.getClass()
 ```java
 @Override
 public PhoneNumber clone() {
-	try {
-		return (PhoneNumber) super.clone();
-	} catch(CloneNotSupportedException e) {
-		throw new AssertionError(); //일어날 수 없는 일이다.
-	}
+    try {
+	return (PhoneNumber) super.clone();
+    } catch(CloneNotSupportedException e) {
+	throw new AssertionError(); //일어날 수 없는 일이다.
+    }
 }
 ```
 
@@ -126,13 +126,13 @@ clone 메소드가 단순히 super.clone의 결과를 그대로 반환하면 어
 ```java
 @Override
 public Stack clone() {
-	try {
-			Stack result = (Stack)super.clone();
-			result.elements = elements.clone();
-			return result;
-	} catch (CloneNotSupportedException e) {
-			throw new AssertionError();
-	}
+    try {
+	Stack result = (Stack)super.clone();
+	result.elements = elements.clone();
+	return result;
+    } catch (CloneNotSupportedException e) {
+	throw new AssertionError();
+    }
 }
 ```
 
@@ -228,11 +228,11 @@ HashTable의 clone 메소드는 먼저 적절한 크기의 새로운 버킷 배�
 
 ```java
 Entry deepCopy() {
-	Entry result = new Entry(key, value, next);
-	for(Entry p = result; p.next != null, p = p.next) {
-		p.next = new Entry(p.next.key, p.next.value, p.next.next);
-		return result;
-	}
+    Entry result = new Entry(key, value, next);
+    for(Entry p = result; p.next != null, p = p.next) {
+	p.next = new Entry(p.next.key, p.next.value, p.next.next);
+	return result;
+    }
 }
 ```
 
@@ -256,7 +256,7 @@ public인 clone 메소드에서는 throws절을 없애야한다. 검사 예외�
 ```java
 @Override
 public final Object clone() throws CloneNotSupportedException {
-	throw new CloneNotSupportedException();
+    throw new CloneNotSupportedException();
 }
 ```
 
@@ -292,4 +292,4 @@ public static Yum newInstance(Yum yum) {... };
 
 이들을 이용하면 원본의 구현타입에 얽매이지 않고 복제본의 타입을 직접 선택할 수 있다.
 
-예컨대 HashSet 객체 s를 TreeSet 타입으로 복제할 수 있따다.
+예컨대 HashSet 객체 s를 TreeSet 타입으로 복제할 수 있다.
