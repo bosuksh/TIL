@@ -166,7 +166,7 @@ cp.equals(p); //false
 public boolean equals(Object o) {    //잘못된 코드 추이성 위배
     if(!(o instanceof Point))
         return false;
-		//o가 일반 Point면 색상 무시 
+    //o가 일반 Point면 색상 무시 
     if(!(o instanceOf ColorPoint))
 	return o.equals(this);
     //o가 Color Point면 색상 비교
@@ -199,7 +199,7 @@ p1과 p2, p2와 p3를 비교할 때는 Point로 Color가 무시되었지만, p1�
 public boolean equals(Object o) {    //리스코프 치환 원칙 위배
     if(o == null || o.getClass() != this.getClass())
         return false;
-		Point p = (Point)o;
+    Point p = (Point)o;
     return p.x == x && p.y == y;
 }
 ```
@@ -220,7 +220,7 @@ public class ColorPoint extends Point{
     private final Color color;
 
     public ColorPoint(int x, int y, Color color) {
-				point = new Point(x,y);
+	point = new Point(x,y);
         this.color = Objects.requiresNonNull(color);
     }
     public Point asPoint(){
