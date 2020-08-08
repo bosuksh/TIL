@@ -133,13 +133,12 @@ public class Point{
 // Point를 상속받은 ColorPoint 클래스
 public class ColorPoint extends Point{
     private final Color color;
-
     public ColorPoint(int x, int y, Color color) {
         super(x, y);
         this.color = color;
     }
 		
-		@Override
+    @Override
     public boolean equals(Object o) {    //잘못된 코드 대칭성 위배
         if(!(o instanceof ColorPoint))
             return false;
