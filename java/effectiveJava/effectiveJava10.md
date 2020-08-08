@@ -64,8 +64,8 @@ public final class CaseInsensitiveString {
     public boolean equals(Object o) {
        if(o instanceof CaseInsensitiveString)
            return s.equalsIgnoreCase(((CaseInsensitiveString)o).s);
-       **if(o instanceof String)   //한 방향으로만 작용한다 문제점
-           return s.equalsIgnoreCase((String) o);**
+       if(o instanceof String)   //한 방향으로만 작용한다 문제점
+           return s.equalsIgnoreCase((String) o);
        return false;
     }
 }
@@ -101,7 +101,7 @@ list.add(cis);
 @Override
 public boolean equals(Object o) {
    return o instanceof CaseInsensitiveString &&
-					 ((CaseInsensitiveString)o).s.equalsIgnoreCase(s);
+	((CaseInsensitiveString)o).s.equalsIgnoreCase(s);
 }
 ```
 
@@ -133,13 +133,12 @@ public class Point{
 // Point를 상속받은 ColorPoint 클래스
 public class ColorPoint extends Point{
     private final Color color;
-
     public ColorPoint(int x, int y, Color color) {
         super(x, y);
         this.color = color;
     }
 		
-		@Override
+    @Override
     public boolean equals(Object o) {    //잘못된 코드 대칭성 위배
         if(!(o instanceof ColorPoint))
             return false;
@@ -167,11 +166,11 @@ cp.equals(p); //false
 public boolean equals(Object o) {    //잘못된 코드 추이성 위배
     if(!(o instanceof Point))
         return false;
-		//o가 일반 Point면 색상 무시 
+    //o가 일반 Point면 색상 무시 
     if(!(o instanceOf ColorPoint))
-				return o.equals(this);
-		//ork Color Point면 색상 비교
-		return super.equals(o) && ((ColorPoint) o).color == color;
+	return o.equals(this);
+    //o가 Color Point면 색상 비교
+    return super.equals(o) && ((ColorPoint) o).color == color;
 }
 ```
 
@@ -200,7 +199,7 @@ p1과 p2, p2와 p3를 비교할 때는 Point로 Color가 무시되었지만, p1�
 public boolean equals(Object o) {    //리스코프 치환 원칙 위배
     if(o == null || o.getClass() != this.getClass())
         return false;
-		Point p = (Point)o;
+    Point p = (Point)o;
     return p.x == x && p.y == y;
 }
 ```
@@ -221,18 +220,18 @@ public class ColorPoint extends Point{
     private final Color color;
 
     public ColorPoint(int x, int y, Color color) {
-				point = new Point(x,y);
+	point = new Point(x,y);
         this.color = Objects.requiresNonNull(color);
     }
-		public Point asPoint(){
-				return point;
-		}
+    public Point asPoint(){
+	return point;
+    }
 		
-		@Override
+    @Override
     public boolean equals(Object o) {    //잘못된 코드 대칭성 위배
         if(!(o instanceof ColorPoint))
             return false;
-				ColorPoint cp = (ColorPoint)o;
+	ColorPoint cp = (ColorPoint)o;
         return cp.point.equals(point) && cp.color.equals(color);
     }
 }
