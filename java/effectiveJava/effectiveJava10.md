@@ -223,11 +223,11 @@ public class ColorPoint extends Point{
 				point = new Point(x,y);
         this.color = Objects.requiresNonNull(color);
     }
-		public Point asPoint(){
-				return point;
-		}
+    public Point asPoint(){
+	return point;
+    }
 		
-		@Override
+    @Override
     public boolean equals(Object o) {    //잘못된 코드 대칭성 위배
         if(!(o instanceof ColorPoint))
             return false;
