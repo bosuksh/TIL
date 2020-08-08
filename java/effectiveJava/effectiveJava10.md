@@ -64,8 +64,8 @@ public final class CaseInsensitiveString {
     public boolean equals(Object o) {
        if(o instanceof CaseInsensitiveString)
            return s.equalsIgnoreCase(((CaseInsensitiveString)o).s);
-       **if(o instanceof String)   //한 방향으로만 작용한다 문제점
-           return s.equalsIgnoreCase((String) o);**
+       if(o instanceof String)   //한 방향으로만 작용한다 문제점
+           return s.equalsIgnoreCase((String) o);
        return false;
     }
 }
