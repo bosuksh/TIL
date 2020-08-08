@@ -231,7 +231,7 @@ public class ColorPoint extends Point{
     public boolean equals(Object o) {    //잘못된 코드 대칭성 위배
         if(!(o instanceof ColorPoint))
             return false;
-				ColorPoint cp = (ColorPoint)o;
+	ColorPoint cp = (ColorPoint)o;
         return cp.point.equals(point) && cp.color.equals(color);
     }
 }
