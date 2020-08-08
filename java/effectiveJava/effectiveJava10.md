@@ -168,9 +168,9 @@ public boolean equals(Object o) {    //잘못된 코드 추이성 위배
         return false;
 		//o가 일반 Point면 색상 무시 
     if(!(o instanceOf ColorPoint))
-				return o.equals(this);
-		//ork Color Point면 색상 비교
-		return super.equals(o) && ((ColorPoint) o).color == color;
+	return o.equals(this);
+    //o가 Color Point면 색상 비교
+    return super.equals(o) && ((ColorPoint) o).color == color;
 }
 ```
 
