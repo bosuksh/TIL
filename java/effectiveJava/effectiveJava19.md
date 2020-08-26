@@ -22,7 +22,7 @@ API 문서의 메소드 설명 끝에 "Implementation Requirements"로 시작하
 
 java.util.AbstractList의 removeRange 메소드를 예로 보자. 
 
-![https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled.png](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled 1.png)
+![https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled%201.png](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled%201.png)
 
 List구현체의 최종 사용자는 removeRange 메소드에 관심이 없다. 그럼에도 이 메소드를 제공한 이유는 단지 하위 클래스에서 부분리스트의 clear 메소드를 고성능으로 만들기 위해서이다. 
 
