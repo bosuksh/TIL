@@ -72,7 +72,7 @@ public final class Sub extends Super {
 
 이 프로그램이 instant를 두번 출력 하리라 기대했겠지만, 첫 번째는 null을 출력한다. 상위 클래스의 생성자는 하위 클래스의 생성자가 인스턴트 필드를 초기화하기도 전에 overrideMe를 호출하기 때문이다. final 필드의 상태가 이 프로그램에서는 두 가지 임에 주목하자. 
 
-## 4. Cloneable이나 Serializable 인터페이스는 상속용 설계의 어려움을 한층 더해준다.
+## 5. Cloneable이나 Serializable 인터페이스는 상속용 설계의 어려움을 한층 더해준다.
 
 clone과 readObject는 생성자와 비슷한 효과를 낸다. 따라서 상속용 클래스에서 Cloneable이나 Serializable을 구현할지 정해야 한다면, 이들을 구현할 때 따르는 제약도 생성자와 비슷하다는 점에 주의하자.
 
