@@ -12,17 +12,17 @@ API 문서의 메소드 설명 끝에 "Implementation Requirements"로 시작하
 
 그 예로 java.util.AbstractCollection을 볼 수 있다. 
 
-![Item19%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%A7%E1%84%92%E1%85%A2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%84%85%E1%85%A1%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%A5%2079269e26141946878f32157726acdd55/Untitled.png](Item19%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%A7%E1%84%92%E1%85%A2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%84%85%E1%85%A1%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%A5%2079269e26141946878f32157726acdd55/Untitled.png)
+![https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled.png](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled.png)
 
 @implSpec은 자바8에서 처음 도입됐고 자바9에서부터 본격적으로 사용됐다.
 
-이 태그를 활성화 하려면 매개변수로 -tag "implSpec:a:Implementation Requiremets:"를 지정해주면 된다.
+이 태그를 활성화 하려면 매개변수로 -tag "implSpec: a :Implementation Requiremets:"를 지정해주면 된다.
 
 ## 2. 클래스의 내부 동작 과정 중간에 끼어들 수 있는 훅을 잘 선별하여 protected 메소드 형태로 공개해야 할 수도 있다.
 
 java.util.AbstractList의 removeRange 메소드를 예로 보자. 
 
-![Item19%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%A7%E1%84%92%E1%85%A2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%84%85%E1%85%A1%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%A5%2079269e26141946878f32157726acdd55/Untitled%201.png](Item19%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%A7%E1%84%92%E1%85%A2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%84%85%E1%85%A1%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%A5%2079269e26141946878f32157726acdd55/Untitled%201.png)
+![https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled.png](https://github.com/bosuksh/TIL/blob/java/java/effectiveJava/img/Untitled 1.png)
 
 List구현체의 최종 사용자는 removeRange 메소드에 관심이 없다. 그럼에도 이 메소드를 제공한 이유는 단지 하위 클래스에서 부분리스트의 clear 메소드를 고성능으로 만들기 위해서이다. 
 
