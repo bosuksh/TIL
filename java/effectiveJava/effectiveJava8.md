@@ -173,3 +173,4 @@ public class CleanerSample implements AutoCloseable {
 CleanerRunner 인스턴스는 절대로 CleanerSample 인스턴스를 참조해서는 안된다. 왜냐하면, 순환참조가 생겨 GC가 CleanerRunner을 회수해 갈 기회가 오지 않는다. 
 
 소스 출처: [https://github.com/keesun/study/blob/master/effective-java/item8.md](https://github.com/keesun/study/blob/master/effective-java/item8.md)
+
