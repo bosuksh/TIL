@@ -1,9 +1,6 @@
 2020-07-28
 
 
-
-# 이펙티브 자바 Item8
-
 # Item8. finalizer와 cleaner 사용을 피하라
 
 자바는 두가지 객체 소멸자를 제공한다. **finalizer과 cleaner**이다.
