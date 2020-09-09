@@ -1,9 +1,6 @@
 2020-07-28
 
 
-
-# 이펙티브 자바 Item8
-
 # Item8. finalizer와 cleaner 사용을 피하라
 
 자바는 두가지 객체 소멸자를 제공한다. **finalizer과 cleaner**이다.
@@ -173,3 +170,4 @@ public class CleanerSample implements AutoCloseable {
 CleanerRunner 인스턴스는 절대로 CleanerSample 인스턴스를 참조해서는 안된다. 왜냐하면, 순환참조가 생겨 GC가 CleanerRunner을 회수해 갈 기회가 오지 않는다. 
 
 소스 출처: [https://github.com/keesun/study/blob/master/effective-java/item8.md](https://github.com/keesun/study/blob/master/effective-java/item8.md)
+

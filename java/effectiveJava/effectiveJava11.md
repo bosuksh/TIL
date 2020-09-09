@@ -1,9 +1,6 @@
 2020-08-05 
 
 
-
-# 이펙티브 자바 Item11
-
 # Item11. equals를 재정의하려거든 hashcode도 재정의해야한다.
 
 **equals를 재정의한 클래스 모두에서 hashCode도 재정의해야한다.**

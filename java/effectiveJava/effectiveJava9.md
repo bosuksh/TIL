@@ -2,8 +2,6 @@
 
 
 
-# 이펙티브 자바 Item9
-
 # Item9. try-finally보다는 try-with-resources를 사용하라.
 
 자바 라이브러리에는 close 메소드를 호출해 직접 닫아줘야 하는 자원이 많다. 예를 들어, InputStream, OutputStream, java.sql.connection 등이 좋은 예다. 
