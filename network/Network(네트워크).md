@@ -1,12 +1,10 @@
 # 2. Network(네트워크)
 
----
 
 ## 1. GET/ POST
 
 ### GET
 
----
 
 HTTP 통신 방식으로 데이터가 HTTP Request Message 헤더부분에 URL에 담겨서 보내지게 된다. 
 
@@ -24,7 +22,6 @@ GET방식은 브라우저에 caching 할 수 있다. 그래서 기존에 Caching
 
 ### POST
 
----
 
 HTTP 통신 방식으로 데이터가 HTTP Request Message Body부분에 담겨서 보내지게 된다. 
 
@@ -38,7 +35,6 @@ HTTP 통신 방식으로 데이터가 HTTP Request Message Body부분에 담겨�
 
 ### TCP(Transmission Control Protocol)
 
----
 
 **신뢰성과 순차성**
 
@@ -54,7 +50,6 @@ HTTP 통신 방식으로 데이터가 HTTP Request Message Body부분에 담겨�
 
 ### UDP (User Datagram Protocol)
 
----
 
 **비신뢰성, 비연결성**
 
