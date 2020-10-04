@@ -52,8 +52,6 @@ public static int[] sort(int[] arr) {
 
 두개의 값을 비교하면서 계속 swap하여 가장 큰 값을 뒤로 오게 하는 정렬 
 
- 
-
 ```java
 public int[] bubbleSort(int[] arr) {
   for(int i = arr.length-1; i > 0; i--) {
@@ -78,6 +76,20 @@ quicksort는 아래의 로직으로 이루어진다. 크게 pivot을 구하고 p
 2. 그리고 첫번째 값과 끝값 양방향으로 진행해오면서 pivot보다 값이 크면 오른쪽으로 가고 작으면 왼쪽으로 가도록 swap을 한다. 
 3. 이 과정을 마친 후 pivot과 중간 값을 swap하고 pivot의 인덱스를 리턴한다. 
 4. pivot을 기준으로 좌우로 재귀를 진행한다. 
+
+<img src="https://t1.daumcdn.net/cfile/tistory/999E373A5ACB53AE07" alt="퀵소트" style="zoom:50%;" />
+
+
+
+<img src="https://t1.daumcdn.net/cfile/tistory/99AD09415ACB54170D" alt="퀵소트" style="zoom:50%;" />
+
+​																				[파티션 과정]
+
+<img src="https://t1.daumcdn.net/cfile/tistory/99CC08345ACB58E91C" alt="퀵소트" style="zoom:50%;" />
+
+​																				[재귀 과정]
+
+
 
 pivot의 위치부터 정해지고 이 과정이 재귀적으로 진행되기 때문에 시간은 O(logn)의 시간 복잡도를 가지고 pivot을 정하는 시간은 O(n)이 걸린다.
 
@@ -112,18 +124,89 @@ public static int partition(int[] array, int left, int right) {
 최악의 경우 정렬된 배열이 앞에서 pivot을 잡으면 파티션이 되지 않아 n번의 횟수를 반복하여 O(n^2)이 나온다. 
 공간 복잡도: O(logn)
 
+최악의 시간복잡도를 해결하기 위해서는 애초에 중간값을 pivot으로 잡으면 된다.
+
+```java
+public static int partition(int[] array, int left, int right) {
+  int mid = (left+right)/2;
+  Utils.swap(array,left,mid);
+  /**
+  위와 동일
+  **/
+}
+```
+
+
+
 ## 5. Merge Sort(병합 정렬)
+
+Merge Sort도 QuickSort와 같은 방식으로 진행되는데
+
+![합병정렬](https://t1.daumcdn.net/cfile/tistory/998BA24C5AD1A2FA1B)
+
+1. 전체 배열을 분할을 한다.
+2. 분할한 것을 다시 합치는 과정을 반복하면 된다.
+
+```java
+private static void mergesort(int[] array, int left, int right) {
+  if(left < right) {
+      int mid = (left+right)/2;
+      mergesort(array,left,mid);
+      mergesort(array,mid+1,right);
+      merge(array,left,right,mid);
+  }
+}
+
+private static void merge(int[] array, int left, int right, int mid) {
+  int[] leftArray = Arrays.copyOfRange(array,left,mid+1);
+  int[] rightArray = Arrays.copyOfRange(array,mid+1,right+1);
+  int i = 0, j = 0, k = left;
+  int leftArrayLength = leftArray.length;
+  int rightArrayLength = rightArray.length;
+
+	//중간값을 기준으로 두개로 쪼갠 배열을 비교해서 작은 배열을 다시 원배열에 넣는다.
+  while(i < leftArrayLength && j < rightArrayLength) {
+    if(leftArray[i] < rightArray[j]) {
+      array[k] = leftArray[i++];
+    }else {
+      array[k] = rightArray[j++];
+    }
+    k++;
+  }
+	
+	//남은 배열들을 채운다. 
+  while(i < leftArrayLength) {
+    array[k++] = leftArray[i++];
+  }
+
+  while(i < rightArrayLength) {
+    array[k++] = rightArray[j++];
+  }
+}
+```
+
+> 시간 복잡도: O(nlog(n)) 
+> 공간 복잡도: O(n)
 
 ## 6. Heap Sort(힙 정렬)
 
 Heap Sort는 두가지 방법으로 실행할 수 있다. 
 
 1. Heap Sort은 정렬 대상을 힙으로 넣었다가 꺼내는 원리로 Heap Sort를 실행할 수 있다. 
+
 2. 기존의 배열을 heapify를 통해 heap으로 만들어주는 과정을 통해서 Heap Sort를 실행할 수 있다.
 
-2번의 방법을 실행할 때
+    
 
-순서는
+    ![힙 정렬](https://t1.daumcdn.net/cfile/tistory/99E1AD445AD4953015)
+
+    ​																		[최대 힙 구성]
+
+    ![힙 정렬](https://t1.daumcdn.net/cfile/tistory/999896445AD4953023)
+
+    ​																	[최대 값 추출]
+
+2번의 방법을 실행할 때 순서는
 
 1. 있는 배열로 최대 힙을 구성(heapify)한다. 
 2. 최대힙의 루트와 가장 뒷 값을 바꾼다. 
@@ -165,3 +248,13 @@ public static void heapSort(int[] array) {
 > 시간 복잡도: O(nlogn) 
 (heapify: O(logn))
 공간 복잡도: O(1)
+
+
+
+Reference
+
+https://mygumi.tistory.com/308
+
+https://mygumi.tistory.com/309
+
+https://mygumi.tistory.com/310
